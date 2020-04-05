@@ -1,19 +1,27 @@
 const program = require('commander')
 const create = require('./commands/create')
+const generate = require('./commands/generate')
 
 let actionMap = {
   // 项目创建
   create: {
-    description: '创建一个新的项目', // 描述
+    description: '创建一个新的项目',
     usages: [
-      // 使用方法
       'lnc create ProjectName',
     ],
-    alias: 'c', // 命令简称
+    alias: 'c',
   },
+  // 生成模块
+  generate: {
+    description: '生成模块代码',
+    usages: [
+      'lnc generate ModuleName'
+    ],
+    alias: 'g',
+  }
 };
 
-// 添加create命令
+// 添加命令
 Object.keys(actionMap).forEach((action) => {
   if (actionMap[action].options) {
     Object.keys(actionMap[action].options).forEach((option) => {
@@ -30,6 +38,9 @@ Object.keys(actionMap).forEach((action) => {
       switch (action) {
         case 'create':
           create(...process.argv.slice(3));
+          break;
+        case 'generate':
+          generate(...process.argv.slice(3));
           break;
         default:
           break;

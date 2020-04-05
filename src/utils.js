@@ -10,12 +10,15 @@ function notExistFold(name) {
     if (fs.existsSync(name)) {
       console.log(
         symbol.error,
-        chalk.red('文件夹名已被占用，请更换名字重新创建')
+        chalk.red('文件夹名已被占用，请更换名字重试')
       );
     } else {
       resolve();
     }
   });
+}
+function folderIsEmpty(path) {
+  return fs.readdirSync(path).length === 0
 }
 
 // 询问用户
@@ -79,4 +82,5 @@ module.exports = {
   prompt,
   downloadTemplate,
   updateJsonFile,
+  folderIsEmpty
 };

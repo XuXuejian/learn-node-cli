@@ -12,7 +12,7 @@ const {
 let create = (ProjectName) => {
   // 项目名不能为空
   if (ProjectName === undefined) {
-    console.log(symbol.error, chalk.redBright('创建项目的时候，请输入项目名'));
+    console.log(symbol.error, chalk.redBright('请输入项目名'));
   } else {
     // 如果文件名不存在则继续执行,否则退出
     notExistFold(ProjectName).then(() => {
