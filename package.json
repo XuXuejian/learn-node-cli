@@ -1,16 +1,21 @@
 {
   "name": "learn-node-cli",
-  "version": "1.0.7",
-  "description": "",
+  "version": "1.0.9",
+  "description": "a demo for create a CLI with nodejs",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "bin": {
     "lnc": "./bin/lnc.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "CLI"
+  ],
+  "author": "xuxuejian",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XuXuejian/learn-node-cli"
+  },
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.0.0",
